@@ -1,0 +1,1 @@
+2017/07/03 13:58:50 [error] 7#0: *1 directory index of "/var/www/prestashop/" is forbidden, client: 172.18.0.1, server: www.test-prestashop.local, request: "GET / HTTP/1.1", host: "localhost"
