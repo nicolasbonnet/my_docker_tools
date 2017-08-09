@@ -15,4 +15,17 @@ services:
         ports:
             - 8000:80
         volumes:
-            - ${SYMFONY_APP_PATH}:/var/www/html
+            - ${LARAVEL_APP_PATH}:/var/www/html
+#            - ../logs:/var/log/apache2/apps_error.log
+#            - ../logs:/var/log/apache2/apps_access.log
+#            - ../logs:/var/log/apache2/error.log
+        environment:
+            #change the line below with your IP address that is visible from Docker
+            #See README for instruction about how to get the right IP address
+            XDEBUG_CONFIG: remote_host=192.168.13.6
+    phpmyadmin:
+            image: phpmyadmin/phpmyadmin
+            links:
+                - db
+            ports:
+                - "8080:80"
